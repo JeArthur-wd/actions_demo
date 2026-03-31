@@ -1,1 +1,14 @@
-class demo on GitHub_actions
+name: my workflow                                #workflowname
+
+on:                                              #events that trigger this workflow
+    push:
+        branches: [main, develop]
+
+jobs:                                            #one or more jobs
+    my-jobs:                                     #job id or job name
+            runs-on-ubuntu-latest                #runner os
+            steps:                               # sequential steps
+                -name:checkout code
+                uses: actions/checkout@v4        #reuseable actions
+                -name: say hello
+                run: echo "helloworld"           #shell command
